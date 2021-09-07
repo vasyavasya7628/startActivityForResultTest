@@ -12,7 +12,7 @@ class MessageActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_result)
         val button: Button = findViewById(R.id.button2)
-        val textEdit: EditText = findViewById(R.id.editTextTextPersonName2)
+        val textEdit: EditText = findViewById(R.id.editTextTextMessage)
 
         button.setOnClickListener {
             val intent = Intent()

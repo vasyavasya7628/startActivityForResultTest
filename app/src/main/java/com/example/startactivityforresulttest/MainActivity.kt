@@ -26,27 +26,32 @@ class MainActivity : AppCompatActivity() {
             startActivityForResult(intentResultActivity, REQUEST_CODE_PHOTO_ACTIVITY)
         }
         buttonStartActivityResult.setOnClickListener {
-            /*1 параметр контекст this - MainActivity
-            *2 параметр ResultActivity прописан в манифесте система, просматривая манифест, запустит активность*/
             val intentResultActivity = Intent(
                 this,
                 MessageActivity::class.java
-            ) //intent это объект обмена сообщениями, который можно использовать для запроса действия от другой активити.
+            )
             startActivityForResult(
                 intentResultActivity,
                 REQUEST_CODE_MESSAGE_ACTIVITY
-            ) //Отличие от обычного startActivity в том, что MainActivity становится «родителем» для ResultActivity
+            )
         }
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
-        if (data == null) {
-            return
-        } else {
-            data?.let {
-                val name: String = data.getStringExtra("name").toString()
-                textGetData.text = "Your name is $name"
+        when {
+            data == null -> {
+                return
+            }
+            requestCode == REQUEST_CODE_MESSAGE_ACTIVITY -> {
+                data.let {
+                    val name: String = data.getStringExtra("name").toString()
+                    textGetData.text = "Your name is $name"
+                }
+            }
+            requestCode == REQUEST_CODE_PHOTO_ACTIVITY -> {
+                val phone: String = data.getStringExtra("phone").toString()
+                textGetData.text = "Your phone is $phone"
             }
         }
     }

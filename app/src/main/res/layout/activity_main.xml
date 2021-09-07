@@ -13,17 +13,30 @@
         android:layout_marginStart="7dp"
         android:layout_marginBottom="36dp"
         android:text="TextView"
-        app:layout_constraintBottom_toTopOf="@+id/buttonStartActivity"
-        app:layout_constraintStart_toStartOf="@+id/buttonStartActivity" />
+        app:layout_constraintBottom_toTopOf="@+id/buttonStartActivityResult"
+        app:layout_constraintStart_toStartOf="@+id/buttonStartActivityResult" />
 
     <Button
-        android:id="@+id/buttonStartActivity"
+        android:id="@+id/buttonStartActivityResult"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="309dp"
-        android:text="Button"
+        android:layout_marginTop="2dp"
+        android:layout_marginBottom="19dp"
+        android:text="@string/buttonstartactivityresult"
+        app:layout_constraintBottom_toTopOf="@+id/buttonStartActivityPhoto"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_chainStyle="packed" />
+
+    <Button
+        android:id="@+id/buttonStartActivityPhoto"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="2dp"
+        android:text="@string/buttonstartactivityphoto"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/buttonStartActivityResult"
+        app:layout_constraintTop_toBottomOf="@+id/buttonStartActivityResult" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">startActivityForResultTest</string>
+    <string name="buttonstartactivityphoto">buttonStartActivityPhoto</string>
+    <string name="buttonstartactivityresult">buttonStartActivityResult</string>
+    <string name="send_phone">send Phone</string>
+    <string name="enter_your_phone">Enter your phone</string>
 </resources>

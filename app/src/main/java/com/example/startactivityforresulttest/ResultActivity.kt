@@ -20,7 +20,7 @@ class ResultActivity : AppCompatActivity() {
         button.setOnClickListener {
             val intent = Intent()
             intent.putExtra("name", textEdit.text.toString())//передать данные простейших типов в другую активити
-            setResult(RESULT_OK, intent)
+            setResult(RESULT_OK, intent)//статус RESULT_OK, указываем, что надо вернуть объект intent в качестве результата
             finish()
         }
     }

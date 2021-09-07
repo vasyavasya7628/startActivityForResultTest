@@ -1,6 +1,5 @@
 package com.example.startactivityforresulttest
 
-import android.R.attr
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
@@ -19,8 +18,10 @@ class MainActivity : AppCompatActivity() {
         textGetData = findViewById(R.id.textGetData)
 
         buttonStartActivity.setOnClickListener {
-            val intent = Intent(this, ResultActivity::class.java)
-            startActivityForResult(intent, 1)
+            /*1 параметр контекст this - MainActivity
+            *2 параметр ResultActivity прописан в манифесте система, просматривая манифест, запустит активность*/
+            val intentResultActivity = Intent(this, ResultActivity::class.java) //intent это объект обмена сообщениями, который можно использовать для запроса действия от другой активити.
+            startActivityForResult(intentResultActivity, 1) //Отличие от обычного startActivity в том, что MainActivity становится «родителем» для ResultActivity
         }
     }
 
